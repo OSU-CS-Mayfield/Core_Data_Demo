@@ -14,6 +14,7 @@
 		9BA57B8127BBF06A00B5C339 /* Core_Data_Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BA57B7F27BBF06A00B5C339 /* Core_Data_Demo.xcdatamodeld */; };
 		9BA57B8327BBF06B00B5C339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA57B8227BBF06B00B5C339 /* Assets.xcassets */; };
 		9BA57B8627BBF06B00B5C339 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA57B8427BBF06B00B5C339 /* LaunchScreen.storyboard */; };
+		9BA57B8E27BC028100B5C339 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA57B8D27BC028100B5C339 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9BA57B8227BBF06B00B5C339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA57B8527BBF06B00B5C339 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BA57B8727BBF06B00B5C339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BA57B8D27BC028100B5C339 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				9BA57B7827BBF06A00B5C339 /* SceneDelegate.swift */,
 				9BA57B7A27BBF06A00B5C339 /* ViewController.swift */,
 				9BA57B7C27BBF06A00B5C339 /* Main.storyboard */,
+				9BA57B8D27BC028100B5C339 /* TableViewController.swift */,
 				9BA57B8227BBF06B00B5C339 /* Assets.xcassets */,
 				9BA57B8427BBF06B00B5C339 /* LaunchScreen.storyboard */,
 				9BA57B8727BBF06B00B5C339 /* Info.plist */,
@@ -144,6 +147,7 @@
 				9BA57B7B27BBF06A00B5C339 /* ViewController.swift in Sources */,
 				9BA57B8127BBF06A00B5C339 /* Core_Data_Demo.xcdatamodeld in Sources */,
 				9BA57B7727BBF06A00B5C339 /* AppDelegate.swift in Sources */,
+				9BA57B8E27BC028100B5C339 /* TableViewController.swift in Sources */,
 				9BA57B7927BBF06A00B5C339 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
