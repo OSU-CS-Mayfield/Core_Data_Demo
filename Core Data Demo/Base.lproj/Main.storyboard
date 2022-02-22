@@ -113,14 +113,23 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Save Information">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="mbk-ge-tYO" kind="unwind" unwindAction="unwindFromSaveWithSegue:" id="EU1-Bm-0gw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="w3J-eI-8Lu"/>
+                    <connections>
+                        <outlet property="courseNum" destination="5kC-aE-AMA" id="BaB-ap-VuI"/>
+                        <outlet property="courseTitle" destination="UbY-e7-rmz" id="JhP-Hp-U0w"/>
+                        <outlet property="deptAbbr" destination="J1U-qt-yJr" id="ibl-E6-XX4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="mbk-ge-tYO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1495.6521739130435" y="189.50892857142856"/>
         </scene>
