@@ -9,24 +9,32 @@ import UIKit
 import CoreData
 
 class TableViewController: UITableViewController {
-    var dataSource: [NSManagedObject] = []
+    var dataSource: [Course] = []
     
     var appDelegate: AppDelegate?
     var context: NSManagedObjectContext?
-    var entity: NSEntityDescription?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         context = appDelegate?.persistentContainer.viewContext
-        entity  = NSEntityDescription.entity(forEntityName: "Course", in: context!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Fetch the database contents.
+        do {
+            dataSource = try context?.fetch(Course.fetchRequest()) ?? []
+        }
+        catch let error as NSError {
+            print("Cannot load data: \(error)")
+        }
     }
     
     @IBAction func unwindFromSave(segue: UIStoryboardSegue) {
@@ -36,25 +44,23 @@ class TableViewController: UITableViewController {
             return
         }
         
-        if let entity = self.entity {
-            // Create a new course record.
-            let course = NSManagedObject(entity: entity, insertInto: context)
-            // Set the attributes in the new course record.
-            course.setValue(source.deptAbbrResult, forKey: "deptAbbr")
-            course.setValue(source.courseNumResult, forKey: "courseNum")
-            course.setValue(source.courseTitleResult, forKey: "title")
-            
-            do {
-                // Update the data store with the managed context.
-                try context?.save()
-                // Add this record to the table view data source.
-                dataSource.append(course)
-                // Reload the data in the table view.
-                self.tableView.reloadData()
-            }
-            catch let error as NSError {
-                print("Cannot save data: \(error)")
-            }
+        // Create a new course record.
+        let course = Course(context: context!)
+        // Set the attributes in the new course record.
+        course.deptAbbr = source.deptAbbrResult
+        course.courseNum = source.courseNumResult
+        course.title = source.courseTitleResult
+        
+        do {
+            // Update the data store with the managed context.
+            try context?.save()
+            // Add this record to the table view data source.
+            dataSource.append(course)
+            // Reload the data in the table view.
+            self.tableView.reloadData()
+        }
+        catch let error as NSError {
+            print("Cannot save data: \(error)")
         }
     }
 
@@ -74,23 +80,12 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "My Cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = dataSource[indexPath[1]].value(forKey: "deptAbbr") as! String + String((dataSource[indexPath[1]].value(forKey: "courseNum") as! Int16))
-        cell.detailTextLabel?.text = dataSource[indexPath[1]].value(forKey: "title") as? String
+        cell.textLabel?.text = dataSource[indexPath[1]].deptAbbr! + String(dataSource[indexPath[1]].courseNum)
+        cell.detailTextLabel?.text = dataSource[indexPath[1]].title
 
         return cell
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // Fetch the database contents.
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Course")
-        
-        do {
-            dataSource = try context?.fetch(fetchRequest) ?? []
-        }
-        catch let error as NSError {
-            print("Cannot load data: \(error)")
-        }
-    }
 
     /*
     // Override to support conditional editing of the table view.
