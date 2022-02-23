@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B53E9DD27C67D2300373247 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9B53E9DC27C67D2300373247 /* .gitignore */; };
 		9B7086BC27C5822A008D326D /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7086B827C5822A008D326D /* Course+CoreDataClass.swift */; };
 		9B7086BD27C5822A008D326D /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7086B927C5822A008D326D /* Course+CoreDataProperties.swift */; };
 		9B7086BE27C5822A008D326D /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7086BA27C5822A008D326D /* Student+CoreDataClass.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B53E9DC27C67D2300373247 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9B7086B827C5822A008D326D /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		9B7086B927C5822A008D326D /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		9B7086BA27C5822A008D326D /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -52,6 +54,7 @@
 		9BA57B6A27BBF06A00B5C339 = {
 			isa = PBXGroup;
 			children = (
+				9B53E9DC27C67D2300373247 /* .gitignore */,
 				9BA57B7527BBF06A00B5C339 /* Core Data Demo */,
 				9BA57B7427BBF06A00B5C339 /* Products */,
 			);
@@ -143,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B53E9DD27C67D2300373247 /* .gitignore in Resources */,
 				9BA57B8627BBF06B00B5C339 /* LaunchScreen.storyboard in Resources */,
 				9BA57B8327BBF06B00B5C339 /* Assets.xcassets in Resources */,
 				9BA57B7E27BBF06A00B5C339 /* Main.storyboard in Resources */,
